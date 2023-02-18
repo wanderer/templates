@@ -1,10 +1,8 @@
 {
   description = "A collection of flake templates";
 
-  outputs = { self }: {
-
+  outputs = {self}: {
     templates = {
-
       trivial = {
         path = ./trivial;
         description = "A very basic flake";
@@ -86,9 +84,15 @@
         '';
       };
 
+      nodejs = {
+        path = ./nodejs;
+        description = "A simple Nodejs template";
+        welcomeText = ''
+          Hello, you have just Nodejs template that inculdes typescript and npnm.
+        '';
+      };
     };
 
     defaultTemplate = self.templates.trivial;
-
   };
 }
